@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">存</button>
+    <button id="btn1">取</button>
+    <button id="btn2">删</button>
+    <button id="btn3">clear</button>
+    <script>
+        btn.onclick = function(){
+            localStorage.setItem("name","kerwin")
+        }
+
+        btn1.onclick = function(){
+            console.log(localStorage.getItem("name"))
+        }
+
+        btn2.onclick = function(){
+            localStorage.removeItem("name")
+        }
+
+        btn.onclick = function(){
+            localStorage.clear()
+        }
+    </script>
+</body>
+</html>

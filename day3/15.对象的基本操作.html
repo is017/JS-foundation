@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 增
+        var obj = {}
+        console.log(obj)
+        obj.name = "kerwin"
+        obj.age = 100
+        obj.location = "DaLian"
+        console.log(obj)
+
+        // 查
+        document.write("name:"+obj.name)
+
+        // 改
+        obj.age = 200
+        console.log("age:"+obj.age)
+
+        // 删
+        delete obj.name
+        console.log(obj)
+
+        // 2-增
+        var obj2 = {}
+        obj2["name"] = "tiechui"
+        console.log(obj2)
+
+        // 2-查
+        console.log(obj2["name"])
+
+        // 2-改
+        obj2["name"] = "tiechui2"
+        console.log(obj2["name"])
+
+        // 2-删
+        delete obj2["name"]
+        console.log(obj2)
+
+        var obj3 = {
+            "a+b" : "111"
+        }
+        console.log(obj3["a+b"])
+
+    </script>
+</body>
+
+</html>

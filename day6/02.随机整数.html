@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 0-10 不包含10
+        var res = Math.floor(Math.random()*10)
+
+        // 包含10
+        var res1 = Math.floor(Math.random()*(10+1))
+
+        // 0-20
+        var res3 = Math.floor(Math.random()*10+10)
+        var res4 = Math.floor(Math.random()*(10+1)+10)
+
+        // 函数 min-max 不包含
+        function getRandom(min,max){
+            if(min>max){
+                console.error("参数有误")
+                return
+            }
+            return Math.floor(Math.random()*(max-min))+min
+        }
+
+        // 包含
+        function getRandom(min,max){
+            if(min>max){
+                console.error("参数有误")
+                return
+            }
+            return Math.floor(Math.random()*(max-min+1))+min
+        }
+
+    </script>
+</body>
+</html>

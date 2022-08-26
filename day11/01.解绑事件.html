@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">抽奖</button>
+    <script>
+        /* btn.onclick = function(){
+            console.log("谢谢惠顾")
+
+            // this.disabled = "disabled"
+            this.onclick = null
+        } */
+
+        // 事件解绑
+        function handler(){
+            console.log("谢谢惠顾")
+            this.removeEventListener("click",handler)
+        }
+        btn.addEventListener("click",handler)
+
+        // btn.removeEventListener("click",handler)
+
+    </script>
+</body>
+</html>

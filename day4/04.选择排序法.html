@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [4, 3, 2, 1]
+        /* var minIndex = 0
+        for(var i=1;i<arr.length;i++){
+            if(arr[i]<arr[minIndex]){
+                minIndex = i
+            }
+        }
+        console.log(minIndex)
+        var temp = arr[0]
+        arr[0] = arr[minIndex]
+        arr[minIndex] = temp */
+        for (var i = 0; i < arr.length - 1; i++) {
+            var minIndex = i
+            for (var j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j
+                }
+            }
+            if (minIndex !== i) {
+                var temp = arr[i]
+                arr[i] = arr[minIndex]
+                arr[minIndex] = temp
+            }
+        }
+        console.log(arr)
+    </script>
+</body>
+
+</html>

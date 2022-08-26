@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* function isPrime(j) {
+            for (var i = 2; i <= j / 2; i++) {
+                if (j % i === 0) {
+                    break
+                }
+            }
+
+            // if (i <= j / 2) {
+            //     return false
+            // } else {
+            //     return true
+            // }
+            return i > j / 2
+        } */
+
+        var res = isPrime(20)
+        console.log(res)
+
+        function count(m, n) {
+            for (var a = m; a <= n; a++) {
+                if (isPrime(a)) {
+                    console.log(a)
+                }
+            }
+        }
+        // count(300, 500)
+
+        function isPrime(j) {
+            for (var i = 2; i <= j / 2; i++) {
+                if (j % i === 0) {
+                    return false
+                }
+            }
+            return true
+        }
+
+        isPrime(20)
+    </script>
+</body>
+
+</html>

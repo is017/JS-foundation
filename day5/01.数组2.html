@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 不影响原数组的方法
+
+        // concat 拼接
+        var arr1 = [1,2,3]
+        var arr2 = [4,5,6]
+
+        var arr3 = arr1.concat(arr2,7,[8,9])
+        console.log(arr1,arr2,arr3)
+
+        // join 数组=>字符串
+        var arr4 = [1,2,3,4,5]
+        document.write(arr4.join("-"))
+
+        var arr5 = []
+        for(var i = 1;i<=5;i++){
+            arr5.push("<li>"+i+"</li>")
+        }
+        document.write(arr5.join(""))
+
+        // slice 截取
+        var arr6 = ["aaaa","bbbb","vvv","dd"]
+        var arr7 = arr6.slice(0,2)
+        console.log(arr7)
+
+        // indexOf
+        var res = arr6.indexOf("bbbb")
+        console.log(res)
+    </script>
+</body>
+</html>

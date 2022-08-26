@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        hello world
+        <div>kerwin</div>
+    </div>
+    <input type="text" value="hello" id="username">
+    <select name="" id="select">
+        <option value="1">111</option>
+        <option value="2" selected>222</option>
+        <option value="3">333</option>
+    </select>
+
+    <script>
+        console.log(box.innerHTML)
+        // box.innerHTML = "1111"
+        console.log(box.innerText)
+
+        box.innerText = "<h1>1111</h1>"
+
+        console.log(username.value)
+        username.value = "1111"
+
+        console.log(select.value)
+    </script>
+</body>
+</html>

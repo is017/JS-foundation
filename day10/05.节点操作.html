@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div id="child">11111</div>
+    </div>
+
+    <script>
+        var odiv = document.createElement("div")
+        odiv.className = "aaaa"
+        odiv.id = "aaa"
+        odiv.style.background = "yellow"
+        odiv.innerHTML = "我是新节点"
+
+
+        // box.appendChild(odiv)
+
+        box.insertBefore(odiv,child)
+
+        // box.removeChild(child)
+
+        var odiv2 = document.createElement("div")
+        odiv2.innerHTML = "222222"
+        box.replaceChild(odiv2,child)
+
+        // 克隆节点
+        var oCloneBox = box.cloneNode(true)
+        console.log(oCloneBox)
+
+        document.body.appendChild(oCloneBox)
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        ul li {
+            overflow: hidden;
+            height: 150px;
+        }
+
+        ul li img {
+            float: left;
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>标题</h1>
+    <ul id="list">
+        <!-- <li>
+            <img src="https://static.maizuo.com/pc/v5/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70"            " alt="">
+            <h3>新神榜：杨戬</h3>
+        </li> -->
+    </ul>
+    <script>
+        var arr1 = [
+            {
+                name: "新神榜：杨戬",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "独行月球",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/5b5400f760e89d1ae725f6b67b95ba3a.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "小黄人大眼萌：神偷奶爸前传",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/cc6af4c0b8ffbc64da4b7996517a1208.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "明日战记",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/2dff84a9ce76d52bb70e26d6a746786b.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "断·桥",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/ff84983223ebb08563c07f5838cde9f0.jpg?x-oss-process=image/quality,Q_70"
+            }
+        ]
+
+        var arr2 = [
+            {
+                name: "人生大事",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/591f8b2e99b2b015eb56939cd89d208c.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "山海经之再见怪兽",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/c6ee9c78519f4fd5d8f13cfc38ed9622.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "雀斑公主",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/a08125f88e07cbd6aae0a651434611af.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "世界上最爱我的人",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/677d808f74eef9b7dc4ec221e1973a8f.jpg?x-oss-process=image/quality,Q_70"
+            },
+            {
+                name: "神探大战",
+                url: "https://static.maizuo.com/pc/v5/usr/movie/b8b010d46800d865c406a13f042ff66c.jpg?x-oss-process=image/quality,Q_70"
+            }
+        ]
+
+        renderHTML(arr1)
+        function renderHTML(arr) {
+        //     list.innerHTML += arr.map(function (item) {
+        //         return `<li>
+            
+        // </li>`
+        //     }).join("")
+            for(var i=0;i<arr.length;i++){
+            var oli = document.createElement("li")
+            oli.innerHTML = `<img src="${arr[i].url}" alt="">
+            <h3>${arr[i].name}</h3>`
+            list.appendChild(oli)
+        }
+        }
+
+        
+
+        isLoading = false
+
+        window.onscroll = function(){
+            var listHeight = list.offsetHeight
+            var listTop = list.offsetTop
+            console.log(listHeight+listTop)
+
+            var scrollTop = document.documentElement.scrollTop
+            var windowHeight = document.documentElement.clientHeight
+            console.log(Math.round(windowHeight+scrollTop))
+
+            if(isLoading) return
+            if((listHeight+listTop)-Math.round(windowHeight+scrollTop)<50){
+                isLoading = true
+
+                // 渲染下一页数据
+                setTimeout(function(){
+                renderHTML(arr2)
+                isLoading = false  //下一次渲染继续触发
+                },1000)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

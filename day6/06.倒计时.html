@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var targetDate = new Date("2023/6/18")
+
+
+        function diffTime(current, target) {
+            var sub = Math.ceil((target - current) / 1000)
+
+            // 天
+            var day = parseInt(sub / (60 * 60 * 24))
+            var hours = parseInt(sub % (60 * 60 * 24) / (60 * 60))
+            var minutes = parseInt(sub % (60 * 60) / 60)
+            var seconds = sub % 60
+
+
+            var obj = {
+                day: day,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+            }
+            return obj
+        }
+
+
+
+        setInterval(function () {
+            var currentData = new Date()
+            var res = diffTime(currentData, targetDate)
+            // document.write(`京东618-${res.day}天${res.hours}时
+            // ${res.minutes}分${res.seconds}秒`)
+            // document.write("<br>")
+            box.innerHTML = `京东618-${res.day}天${res.hours}时${res.minutes}分${res.seconds}秒`
+        }, 1000)
+    </script>
+</body>
+
+</html>

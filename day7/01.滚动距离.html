@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">回到顶部</button>
+    <script>
+        window.onscroll = function(){
+            console.log(document.documentElement.scrollTop)
+        }
+
+        if(document.documentElement.scrollTop > 100){
+            console.log("回到顶部")
+        }else{
+            console.log("隐藏回到顶部")
+        }
+
+        btn.onclick = function(){
+            // window.scrollTo(0,0)
+            window.scrollTo(
+                {
+                    top:0,
+                    left:0
+                }
+            )
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* var str = "abcd"
+        var strcp = str
+        console.log(str===strcp) */
+        /*  var obj = {
+             name: "javascript",
+             age: "27",
+             usage: "web"
+         }
+         var obj1 = obj
+         obj1.name = "java"
+         console.log(obj,obj1) */
+        var obj = {
+            name: "javascript",
+            age: "27",
+            usage: "web"
+        }
+
+        var obj2 = {}
+        for(var i in obj){
+            obj2[i] = obj[i]
+        }
+        console.log(obj,obj2)
+        obj2.name = "java"
+        console.log(obj,obj2)
+
+    </script>
+</body>
+
+</html>

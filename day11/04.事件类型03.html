@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="myform">
+        <input type="text" name="" id="username">
+        <input type="reset" name="" id="">
+        <input type="submit" value="提交" id="">
+    </form>
+    <script>
+        username.onfocus = function () {
+            console.log("获取焦点");
+        }
+
+        username.onblur = function () {
+            console.log("失去焦点");
+        }
+
+        /* username.onchange = function(){
+            console.log("change");
+        } */
+        username.oninput = function () {
+            console.log("input");
+        }
+
+        myform.onsubmit = function(){
+            console.log("submit");
+            return false
+        }
+
+        myform.onreset = function(){
+            console.log("reset");
+        }
+    </script>
+</body>
+
+</html>

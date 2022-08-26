@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var num = 100
+        function test1(){
+            var num = 200
+
+            function child1(){
+                var num = 300
+                console.log(num)
+            }
+            child1()
+        }
+        test1()
+    </script> -->
+    <script>
+        function test1(){
+            function test2(){
+                num = 100
+                console.log(num)
+            }
+            test2()
+        }
+        test1()
+        console.log(num)
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        #child{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <div id="box">
+        <div id="child"></div>
+    </div>
+    <script>
+        // dblclick
+        btn.onclick = function () {
+            console.log("单击执行")
+        }
+
+        btn.ondblclick = function () {
+            console.log("双击执行");
+        }
+
+        // contextmenu 右键单击
+        btn.oncontextmenu = function () {
+            console.log("右键单击");
+        }
+
+        /* box.onmousedown = function () {
+            console.log("鼠标按下")
+        }
+
+        box.onmousemove = function () {
+            console.log("鼠标移出")
+        }
+
+        box.onmouseup = function () {
+            console.log("鼠标抬起")
+        } */
+
+        box.onmouseover = function(){
+            console.log("移入");
+        }
+
+        box.onmouseout = function(){
+            console.log("移出");
+        }
+    </script>
+</body>
+
+</html>
