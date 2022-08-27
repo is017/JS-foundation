@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <script>
+        var name = "11111111"
+        var obj1 = {
+            name:"obj1",
+            getName:function(a,b,c){
+                console.log("getName1",this.name)
+                console.log("参数",a,b,c)
+            }
+        }
+
+        var obj2 = {
+            name:"obj2",
+            getName:function(){
+                console.log("getName2",this.name)
+            }
+        }
+        // console.log(obj1)
+        // obj1.getName()
+        // obj2.getName()
+
+        // call  支持多个参数
+        obj1.getName.call(obj2,1,2,3)
+
+        // apply  只支持两个参数，其中一个是数组
+        obj1.getName.apply(obj2,[1,2,3])
+
+        // obj1.getName.call(window)
+
+        // bind
+        var fun1 = obj1.getName.bind(obj2,1,2,3)
+        console.log(fun1)
+        fun1()
+
+        var obtn = document.getElementById("btn")
+        
+    </script>
+</body>
+</html>

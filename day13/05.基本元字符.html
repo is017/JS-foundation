@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 \d 一位数字（0-9）
+
+        // var reg = /\d/
+
+        // console.log(reg.test("111"))
+
+        //  2 \D 一位非数字
+        // var reg = /\Dk/
+        // console.log(reg.test("reg"))
+
+        // 3 \s 一位空白 （空白 换行 缩进）
+        // var reg  = /\s/
+        // console.log(reg.test("111 0"))
+        // console.log(reg.test("111\n0"))
+
+        // 4 \S 1位非空白
+        // var reg = /\S/
+        // console.log(reg.test("    1"))
+
+        // 5 \s 1位字母 数字 下划线
+        // var reg = /\w/
+        // console.log(reg.test("*"))
+        
+        // 6 \S 一位非数字 字母 下划线
+        // var reg = /\W/
+        // console.log(reg.test("**"))
+
+        // 7 .任意内容（不包含换行）
+        // var reg = /./
+        // console.log(reg.test("$%^&*"))
+
+        // 8  .\转义字符
+        var reg = /\d\.\d/
+        console.log(reg.test("1.2"))
+        console.log(reg.test("1a2"))
+
+    </script>
+</body>
+</html>

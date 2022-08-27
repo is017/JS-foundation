@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 * 0~n
+        // var reg = /\d*/
+        // console.log(reg.test("abc"))
+
+        // 2 + 1~n
+        // var reg = /\d+/
+        // console.log(reg.test("abc"))
+        // console.log(reg.exec("abc124acv"))
+        
+        // 3 ? 0~1
+        // var reg = /\d?/
+        // console.log(reg.test("abc"))
+        // console.log(reg.test("abc124acv"))
+
+        // 4 {n,} 指定次数 >=n
+        // var reg = /\d{3,}/
+        // console.log(reg.test("a333"))
+
+        // 5 {n,m}
+        var reg = /\d{3,5}/
+        console.log(reg.test("a333666"))
+
+        var reg2 = /^abc{2}$/
+        console.log(reg2.test("ab cc"))
+    </script>
+</body>
+</html>

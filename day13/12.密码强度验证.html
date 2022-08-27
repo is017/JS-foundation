@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        form{
+            width: 500px;
+            height: 200px;
+            margin: 100px auto;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <label for="">
+            <input type="text">
+        </label>
+        <p>
+            <span>弱</span>
+            <span>中</span>
+            <span>强</span>
+        </p>
+    </form>
+
+    <script>
+        var oinput = document.querySelector("input")
+        var reg1 = /\d/
+        var reg2 = /[a-z]/i
+        var reg3 = /[!@#$%^&*()]/
+        
+        var ospan = document.querySelectorAll("span")
+        oinput.oninput = function (evt) {
+            // console.log(this.value)
+            // console.log(evt.target.value)
+
+            var level = 0
+            if (reg1.test(this.value)) level++
+            if (reg2.test(this.value)) level++
+            if (reg3.test(this.value)) level++
+            console.log(level)
+
+            for(var i=0;i<ospan.length;i++){
+                ospan[i].classList.remove("active")
+                if(i<level){
+                    ospan[i].classList.add("active")
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

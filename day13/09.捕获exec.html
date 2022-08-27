@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var reg = /\d/
+        // console.log(reg.exec("aaaa"))
+
+        /* var datestr = "time is 2029-01-01 12:20:20"
+        var reg = /\d{4}-\d{1,2}-\d{1,2}/
+        // console.log(reg.exec(datastr))
+        var newdatestr = reg.exec(datestr)
+        console.log(newdatestr[0].split("-").join("/")) */
+
+        // 标识符 g i
+        var datestr = "time is from 2029-01-01 12:20:20 to 2029-11-01 12:20:20"
+        var reg = /(\d{4})-(\d{1,2})-(\d{1,2})/g
+        var newdatestr1 = reg.exec(datestr)
+        console.log(newdatestr1)
+        var newdatestr2 = reg.exec(datestr)
+        console.log(newdatestr2)
+        console.log(newdatestr1[0].split("-").join("/"))
+        console.log(newdatestr2[0].split("-").join("/"))
+
+        var myreg = /[a-z]/i
+        console.log(myreg.test("AA"))
+
+    </script>
+</body>
+</html>

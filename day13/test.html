@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+    <ul id="list" style="width: 100px;margin:0;float: left;">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <button style="float:left;" id="addli">添加一个 li</button>
+    <button style="float:left;" id="delli">删除一个 li</button>
+    <script>
+        window.onload = function(){
+            var the_ul = document.getElementById('list');
+            var the_li = the_ul.getElementsByTagName('li');
+            var sum = the_li.length
+            the_ul.onclick = function(e){
+                console.log(e.target.innerHTML)
+            };
+            document.getElementById('addli').onclick = function (){
+                var newli = document.createElement("li");
+                newli.innerHTML = ++sum;
+                the_ul.appendChild(newli);
+            };
+
+
+
+
+            
+            document.getElementById('delli').onclick = function (){
+                the_ul.firstElementChild.remove();
+            };
+        }
+    </script>
+</body>
+</html>

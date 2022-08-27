@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ^ 开头
+        // var reg = /^\d/
+        // console.log(reg.test("1aa"))
+
+        // $ 结尾
+        // var reg = /\d$/
+        // console.log(reg.test("1aa2"))
+
+        // ^开头结尾$
+        var reg = /^a\dc$/
+        console.log(reg.test("1aa2"))
+        console.log(reg.test("a2c"))
+    </script>
+</body>
+</html>

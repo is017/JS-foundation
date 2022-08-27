@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mytext">
+    <script>
+        var test1 = function(){
+            console.log("1111")
+        }
+
+        var test2 = () => {
+            console.log("2222")
+        }
+
+        // test1()
+        // test2()
+
+        // 只有一个形参可以省略()
+        var test3 = a => {
+            console.log(111,a)
+        }
+        // test3("kerwin")
+
+        var test4 = a => 100*a
+        // console.log(test4(10))
+
+        var list = ["aaa","bbb","ccc"]
+        var newlist = list.map(item => `<li>{$item}</li>`)
+        // console.log(newlist.join(""))
+
+        var test5 = () => console.log(1111)
+        // test5()
+
+        var test6 = () => {
+            return{
+                name:"kerwin"
+            }
+        }
+        // console.log(test6())
+
+        var test6 = function(){
+            // console.log(arguments[0],arguments[1],arguments[2])
+            // console.log(Array.from(arguments)) 
+        }
+        // test6(1,2,3)
+
+        var omytext = document.getElementById("mytext")
+        omytext.oninput =function(){
+            console.log(this.value)
+        }
+    </script>
+</body>
+</html>

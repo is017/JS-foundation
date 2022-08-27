@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" required id="mytext">
+        <input type="email" name="" id="">
+        <input type="submit" value="submit" id="">
+    </form>
+
+    <script>
+        // 1 字变量
+        var reg = /abc/
+        console.log(reg)
+
+        // 2 内置构造函数
+        var reg2 = new RegExp("abc")
+        console.log(reg2)
+
+        mytext.onblur = function(){
+            // console.log("111")
+            console.log(reg.test(mytext.value))
+        }
+    </script>
+</body>
+</html>

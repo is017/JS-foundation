@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串.replace search match
+        var str = "adeafa"
+        // var newstr = str.replace("a","*")
+        var newstr = str.replace(/a/g,"*")
+        // console.log(newstr)
+
+        // search
+        // console.log(str.search(/a/g))
+
+        // match 捕获内容
+        // console.log(str.match("ad"))
+        var datestr = "time is from 2029-01-01 12:20:20 to 2029-11-01 12:20:20"
+        console.log(datestr.match(/(\d{4})-(\d{1,2})-(\d{1,2})/g))
+    </script>
+</body>
+</html>0

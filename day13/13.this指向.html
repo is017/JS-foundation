@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">wcop</div>
+    <script>
+        // console.log(this)
+
+        /* function test (){
+            console.log(this)
+        }
+        test() */
+
+        /* var obj = {
+            name:"kerwin",
+            test:function(){
+                console.log("11111",this)
+            }
+        }
+        obj.test() */
+
+       /*  setTimeout(function(){
+            console.log("1111",this)
+        },2000) */
+
+        /* setInterval(function(){
+            console.log(1111,this)
+        },2000) */
+
+        // 事件绑定中的this
+        /* box.onclick = function(){
+            console.log(this.innerHTML)
+        } */
+
+        var obox = document.getElementById("box")
+        obox.addEventListener("click",function(){
+            console.log(1111,this)
+        })
+    </script>
+</body>
+</html>
