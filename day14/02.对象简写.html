@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="myusername">
+    <input type="password" name="" id="mypassword">
+    <button id="btn">login</button>
+    <script>
+
+        let obtn = document.getElementById("btn")
+        btn.onclick = () => {
+            let username = myusername.value
+            let password = mypassword.value
+            console.log(username, password)
+
+            var obj = {
+                username,
+                passwor
+            }
+
+            console.log("发给后端的数据",obj)
+        }
+
+        var obj1 = {
+            a:1,
+            getName(){
+                console.log(this.a)
+            }
+        }
+        obj1.getName()
+    </script>
+</body>
+
+</html>

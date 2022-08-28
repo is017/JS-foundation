@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 快速从对象或数组中获取里面的成员
+        var arr = ["xiaoming", "tiechui", "shanzhen"]
+        let [x, y, z] = arr
+        console.log(x, y, z)
+
+        var a = 10
+        var b = 20
+        var [b, a] = [a, b]
+        console.log(a, b)
+
+        var arr2 = [1, 2, [3, 4, [5]]]
+        // console.log(arr2[2][2][0])
+        var [q, w, [e, r, [t]]] = arr2
+        console.log(t)
+
+        /* var obj = {
+            name:"kerwin",
+            age:100,
+            location:"dalian"
+        }
+        let {name,age,location:mylocation} = obj
+        document.write(name)
+        document.write(age)
+        document.write(mylocation0) */
+
+        var obj2 = {
+            name: "kerwin",
+            age: 100,
+            location: {
+                provice: "liaoning",
+                city: "dalian"
+            },
+            hobby: [111, 222, 333]
+        }
+
+        var {
+            name,
+            age,
+            location: {
+                provice,
+                city
+            },
+            hobby: [m, n, k]
+        } = obj2
+        console.log(m)
+
+    </script>
+</body>
+
+</html>
