@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字面量
+        // var obj1 ={
+        //     name:"蒸羊羔",
+        //     material:["1111","2222","3333"],
+        //     setCook(){
+
+        //     }
+        // }
+
+        // function createObj(name){
+        //     var obj = {}
+        //     obj.name = "蒸羊羔"
+        //     obj.material = ["1111","2222","3333"]
+        //     return obj
+        // }
+        // var obj1 = createObj("烧花鸭")
+        // console.log(obj1)
+
+        // 自定义构造函数
+        function createObj(name){
+            this.name = name
+            this.material = []
+            this.cook = function(){
+
+            }
+        }
+
+        var obj1 = new createObj("烧花鸭")
+        console.log(obj1)
+    </script>
+</body>
+</html>
