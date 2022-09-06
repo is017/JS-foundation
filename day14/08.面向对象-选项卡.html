@@ -94,25 +94,20 @@
             <li>666</li>
         </ul>
     </div>
-    <script>
-        var oHeaderItems = document.querySelectorAll(".header li")
-        var oBoxItems = document.querySelectorAll(".box li")
+    <script type="module">
+        import MyTabs from './09.Tabs.js'
+        // var oHeaderItems = document.querySelectorAll(".header li")
+        // var oBoxItems = document.querySelectorAll(".box li")
 
-        for (let i = 0; i < oHeaderItems.length; i++) {
-            // 自定义属性
-            oHeaderItems[i].onclick = function handler() {
-                // console.log(this.dataset.index)
-                var index = i
-                for (var m = 0; m < oHeaderItems.length; m++) {
-                    oHeaderItems[m].classList.remove("active")
-                    oBoxItems[m].classList.remove("active")
-                }
 
-                oHeaderItems[index].classList.add("active")
-                oBoxItems[index].classList.add("active")
-            }
-        }
 
+        
+
+        new MyTabs(".container1", "click")
+        // tab1.change()
+
+        new MyTabs(".container2","mouseover")
+        // tab2.change()
 
     </script>
 </body>

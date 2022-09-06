@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+
+    <div class="box2">
+        <h1></h1>
+        <img src="" width="100px">
+        <ul></ul>
+    </div>
+    <script>
+        var data1 = {
+            title: "体育",
+            list: ["体育-1", "体育-2", "体育-3"]
+        }
+
+        var data2 = {
+            title: "丁真",
+            url:"https://pic.maizuo.com/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70",
+            list: ["礼堂", "锐刻", "藏话"]
+        }
+
+        function CreateList(select, data={}) {
+            this.ele = document.querySelector(select)
+            this.title = data.title
+            this.list = data.list
+
+            // this.render = 
+        }
+
+        // 原型
+        CreateList.prototype.render = function () {
+            // 渲染页面
+            var h1 = this.ele.querySelector("h1")
+            var ul = this.ele.querySelector("ul")
+            // console.log(h1, ul)
+
+            h1.innerHTML = this.title
+            ul.innerHTML = this.list.map(item => `<li>${item}</li>`).join("")
+        }
+
+        var obj1 = new CreateList(".box1", data1)
+        // console.log(obj1)
+        obj1.render()
+
+        function CreateImgList(select,data){
+            CreateList.call(this,select,data)
+            this.imgUrl = data.url  //新增的
+        }
+        CreateImgList.prototype = new CreateList()
+
+        CreateImgList.prototype.enhenceRender = function(){
+            this.render()
+            var img = this.ele.querySelector("img")
+            img.src = this.imgUrl
+            
+        }
+
+        let obj2 = new CreateImgList(".box2", data2)
+        obj2.enhenceRender()
+
+        // 对象.__proto__ ===构造函数.prototype
+
+        // 扩展:obj1.toString()
+    </script>
+</body>
+
+</html>
