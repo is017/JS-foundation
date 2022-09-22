@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+    <script src="./util.js"></script>
+    <script>
+        myget.onclick = function () {
+            ajax({
+                url: "http://localhost:3000/user",
+                data: {
+                    username: "hw",
+                    password: 123456
+                },
+                success: function (res) {
+                    console.log("success", res)
+                },
+                error: function (err) {
+                    console.log("error", err)
+                }
+            })
+        }
+
+
+
+        mypost.onclick = function () {
+            ajax({
+                url: "http://localhost:3000/user",
+                method: "POST",
+                data: {
+                    username: "dx",
+                    password: 123456
+                },
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                success: function (res) {
+                    console.log("success", res)
+                },
+                error: function (err) {
+                    console.log("error", err)
+                }
+            })
+        }
+
+        myput.onclick = function () {
+            ajax({
+                url: "http://localhost:3000/user/1",
+                method: "PUT",
+                data: {
+                    username: "dx",
+                    password: 123456
+                },
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                success: function (res) {
+                    console.log("success", res)
+                },
+                error: function (err) {
+                    console.log("error", err)
+                }
+            })
+        }
+
+        mypatch.onclick = function () {
+            ajax({
+                url: "http://localhost:3000/user/1",
+                method: "PATCH",
+                data: {
+                    username: "zl"
+                },
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded"
+                },
+                success: function (res) {
+                    console.log("success", res)
+                },
+                error: function (err) {
+                    console.log("error", err)
+                }
+            })
+        }
+
+        mydelete.onclick = function () {
+            ajax({
+                url: "http://localhost:3000/user/9",
+                method: "DELETE",
+                success: function (res) {
+                    console.log("success", res)
+                },
+                error: function (err) {
+                    console.log("error", err)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

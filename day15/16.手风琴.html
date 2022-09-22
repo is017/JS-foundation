@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 1280px;
+            height: 320px;
+            margin: 100px;
+            border: 5px solid skyblue;
+            display: flex;
+        }
+
+        li {
+            width: 320px;
+            overflow: hidden;
+        }
+
+        img {
+            width: 640px;
+        }
+
+    </style>
+    <script src="./jQuery选项卡案例/lib/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li><img src="./photo/loadingpic704.png" alt=""></li>
+        <li><img src="./photo/loadingpic705.png" alt=""></li>
+        <li><img src="./photo/loadingpic706.png" alt=""></li>
+        <li><img src="./photo/loadingpic708.png" alt=""></li>
+    </ul>
+
+    <script>
+        $("ul li").mouseover(function(){
+            $(this).stop().animate(
+                {
+                    width:640
+                }
+            ).siblings().stop().animate(
+                {
+                    width:640/3
+                }
+            )
+        })
+
+        $("ul").mouseleave(function(){
+            $("ul li").stop().animate(
+                {
+                    width:320
+                }
+            )
+        })
+    </script>
+</body>
+
+</html>

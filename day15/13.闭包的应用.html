@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+    <script>
+        var oli = document.querySelectorAll("li")
+        // for (let i = 0; i < oli.length; i++) {
+        //     // const element = array[i];
+        //     console.log(i)
+            
+        // }
+
+        for(var i=0;i<oli.length;i++){
+            oli.onclick = (function(index){
+                return function(){
+                    console.log(11111,index)
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>

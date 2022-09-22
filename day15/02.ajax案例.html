@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">获取数据</button>
+    <ul id="mylist"></ul>
+    <script>
+        btn.onclick = function () {
+            var xhr = new XMLHttpRequest()
+
+            xhr.open("GET", "http://www.xiongmaoyouxuan.com/api/tabs")
+
+            xhr.send()
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // console.log(xhr.responseText)
+                    var jsondata = JSON.parse(xhr.responseText)
+                    render(jsondata)
+                }
+            }
+        }
+
+        function render(jsondata) {
+            console.log(jsondata.data.list)
+            var html = jsondata.data.list.map(item => `
+                <li>
+                    <img src="${item.imageUrl}"/>
+                    <div>${item.name}</div>
+                </li>
+            `)
+            // console.log(html)
+            
+            mylist.innerHTML = html.join("")
+        }
+
+
+    </script>
+</body>
+
+</html>

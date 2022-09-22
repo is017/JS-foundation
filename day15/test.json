@@ -1,0 +1,49 @@
+{
+  "user": [
+    {
+      "username": "zl",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "username": "tiechui",
+      "password": "123456"
+    },
+    {
+      "username": "pg",
+      "password": "joker",
+      "id": 3
+    },
+    {
+      "username": "aaa",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "aaa",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "username": "hw",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "username": "hw",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "username": "hw",
+      "password": "123456",
+      "id": 8
+    }
+  ],
+  "list": [
+    "111",
+    "222",
+    "333"
+  ]
+}

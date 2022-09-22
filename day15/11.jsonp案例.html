@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="mysearch">
+    <ul id="list"></ul>
+    <script>
+        mysearch.onclick = function (evt) {
+            console.log(evt.target.value)
+            if(!evt.target.value){
+                list.innerHTML = ""
+                return
+            }
+            var oscript = document.createElement("script")
+            oscript.src = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=37146,36553,36462,37358,36885,37274,37404,36786,37258,26350,37364,37223&wd=${evt.target.value}&req=2&csor=1&cb=test&_=1663640652583`
+            document.body.appendChild(oscript)
+            oscript.onload = function(){
+                oscript.remove()
+            }
+        }
+
+        function test(obj){
+            // console.log(obj.g)
+            list.innerHTML = obj.g.map(item => 
+            `
+            <li>
+                ${item.q}    
+            </li>
+            `
+            ).join("")
+        }
+    </script>
+</body>
+
+</html>

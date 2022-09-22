@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+    <script>
+        myget.onclick = function(){
+            const xhr = new XMLHttpRequest()
+            xhr.open("GET","http://localhost:3000/user")
+            xhr.onload = function(){
+                if(xhr.status===200){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+            xhr.send()
+        }
+
+        mypost.onclick = function(){
+            const xhr = new XMLHttpRequest()
+            xhr.open("POST","http://localhost:3000/user")
+            xhr.onload = function(){
+                if(/^2\d{2}$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+            // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+            // xhr.send(`username=pg&password=joker`)
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send(JSON.stringify({
+                username:"ximen",
+                password:"789"
+            }))
+        }
+
+        myput.onclick = function(){
+            const xhr = new XMLHttpRequest()
+            xhr.open("PUT","http://localhost:3000/user/1")
+            xhr.onload = function(){
+                if(/^2\d{2}$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+            // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+            // xhr.send(`username=pg&password=joker`)
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send(JSON.stringify({
+                username:"ximen111"
+            }))
+        }
+    </script>
+</body>
+</html>

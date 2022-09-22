@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery选项卡案例/lib/jquery-3.6.1.min.js"></script>
+</head>
+
+<body>
+    <ul id="list">
+
+    </ul>
+
+    <script>
+        var arr = ["111", "2222", "3333"]
+
+        for (var i = 0; i < arr.length; i++) {
+            $(`<li>${arr[i]}
+                    <button>del</button>
+                </li>`).appendTo($("#list"))
+        }
+
+        // $("#list button").click(function(){
+        //     $(this).parent().remove()
+        // })
+
+        // 事件委托
+        $("#list").on("click","button",function(){
+            $(this).parent().remove()
+        })
+    </script>
+</body>
+
+</html>

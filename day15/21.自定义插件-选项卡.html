@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery选项卡案例/lib/jquery-3.6.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            width: 500px;
+        }
+
+        .header li {
+            flex: 1;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 200px;
+            background-color: yellow;
+            display: none;
+        }
+
+        .header .active {
+            background-color: red;
+        }
+
+        .box .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul class="header">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    
+        <ul class="box">
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+            <li>444</li>
+            <li>555</li>
+            <li>666</li>
+        </ul>
+    </div>
+
+    <script>
+        $.fn.extend({
+            tabs: function (index) {
+                var oli = this.find(".header li")
+                var obox = this.find(".box li")
+                oli.eq(index).addClass("active")
+                obox.eq(index).addClass("active")
+                oli.click(function () {
+                    // console.log(this)
+                    $(this).addClass("active").siblings().removeClass("active")
+                    var index = $(this).index()
+                    obox.eq(index).addClass("active").siblings().removeClass("active")
+                })
+            }
+        })
+
+        $("#container").tabs(2)
+    </script>
+
+</body>
+
+</html>
